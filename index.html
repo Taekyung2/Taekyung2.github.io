@@ -1,4 +1,12 @@
 ---
 layout: home
 author_profile: true
+# articles:
+#   excerpt_type: html
 ---
+    {%- if page.author -%}
+      {%- assign _author = site.data.authors[page.author] -%}
+    {%- else -%}
+      {%- assign _author = site.author -%}
+    {%- endif -%}
+    {%- include article/footer/author-profile.html author=_author -%}
