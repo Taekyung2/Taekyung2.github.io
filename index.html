@@ -1,8 +1,10 @@
 ---
-layout: home
-author_profile: true
-# articles:
-#   excerpt_type: html
+layout: articles
+articles:
+  data_source: posts
+  show_excerpt: true
+  show_readmore: true
+  show_info: true
 ---
     {%- if page.author -%}
       {%- assign _author = site.data.authors[page.author] -%}

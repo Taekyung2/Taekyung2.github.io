@@ -1,28 +1,7 @@
 header:
   - titles:
-      # @start locale config
-      en      : &EN       Archive
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      zh-Hans : &ZH_HANS  归档
-      zh      : *ZH_HANS
-      zh-CN   : *ZH_HANS
-      zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  歸檔
-      zh-TW   : *ZH_HANT
-      zh-HK   : *ZH_HANT
-      ko      : &KO       아카이브
-      ko-KR   : *KO
-      fr      : &FR       Archives
-      fr-BE   : *FR
-      fr-CA   : *FR
-      fr-CH   : *FR
-      fr-FR   : *FR
-      fr-LU   : *FR
-      # @end locale config
-    url: /archive.html
+      ko        : &KO       홈
+    url: /
 
   - titles:
       # @start locale config
@@ -47,4 +26,102 @@ header:
       fr-FR   : *FR
       fr-LU   : *FR
       # @end locale config
-    url: /about.html
+    url: /pages/about.html
+
+  - titles:
+      ko      : &KO       웹
+    url: /pages/web.html
+
+  - titles:
+      ko      : &KO       알고리즘
+    url: /pages/algorithm.html
+
+  - titles:
+      ko      : &KO       CS
+    url: /pages/cs.html
+
+  - titles:
+      # @start locale config
+      en      : &EN       Archive
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+      zh-Hans : &ZH_HANS  归档
+      zh      : *ZH_HANS
+      zh-CN   : *ZH_HANS
+      zh-SG   : *ZH_HANS
+      zh-Hant : &ZH_HANT  歸檔
+      zh-TW   : *ZH_HANT
+      zh-HK   : *ZH_HANT
+      ko      : &KO       포스트
+      ko-KR   : *KO
+      fr      : &FR       Archives
+      fr-BE   : *FR
+      fr-CA   : *FR
+      fr-CH   : *FR
+      fr-FR   : *FR
+      fr-LU   : *FR
+      # @end locale config
+    url: /pages/post.html
+
+
+main:
+  - title: Spring
+    children:
+      - title:  Quick Start
+        url:    /docs//en/quick-start
+      - title:  Structure
+        url:    /docs//en/structure
+    
+  - title: Algorithm 
+    children:
+      - title:  Configuration
+        url:    /docs/_docs/en/configuration
+      - title:  Navigation
+        url:    /docs/_docs/en/navigation
+
+docs-web:
+  - title: Start
+    children:
+      - title:  Quick Start
+        url:    /docs//en/quick-start
+      - title:  Structure
+        url:    /docs//en/structure
+    
+  - title:      Customization
+    children:
+      - title:  Configuration
+        url:    /docs/_docs/en/configuration
+      - title:  Navigation
+        url:    /docs/_docs/en/navigation
+
+docs-algorithm:
+  - title: Start
+    children:
+      - title:  Quick Start
+        url:    /docs//en/quick-start
+      - title:  Structure
+        url:    /docs//en/structure
+    
+  - title:      Customization
+    children:
+      - title:  Configuration
+        url:    /docs/_docs/en/configuration
+      - title:  Navigation
+        url:    /docs/_docs/en/navigation
+
+docs-cs:
+  - title: Start
+    children:
+      - title:  Quick Start
+        url:    /docs//en/quick-start
+      - title:  Structure
+        url:    /docs//en/structure
+    
+  - title:      Customization
+    children:
+      - title:  Configuration
+        url:    /docs/_docs/en/configuration
+      - title:  Navigation
+        url:    /docs/_docs/en/navigation
