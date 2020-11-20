@@ -17,8 +17,9 @@ aside:
 
 
 ## 출력
-    alert('Hello JavaScript);
-
+```javascript
+alert('Hello JavaScript);
+```
 
 - 큰 따옴표와 작은 따옴표를 써서 문자열을 만듬
 
@@ -46,12 +47,12 @@ aside:
 ## typeof
 - 자바스크립트는 숫자, 문자열, 불 같은 자료형을 확인할 때 typeof 연산자를 사용
 
-
-    <!-- <script>
-      alert(typeof ('string'));
-      alert(typeof (273));
-    </script> -->
-
+```javascript
+<script>
+  alert(typeof ('string'));
+  alert(typeof (273));
+</script>
+```
 
 ## 자료형
 - 문자열
@@ -97,6 +98,7 @@ aside:
 
 
 ## for in 반복문
+```javascript
     for(var i in array) {
       alert(array[i]);
     }
@@ -104,13 +106,14 @@ aside:
     for(const element of [1, 2, 3, 4]) {
       alert('요소는 ${element}입니다.');
     }
-
+```
 
 - for in 반복문은 반복 인덱스가 들어감
 - for of 반복문은 요소가 순서대로 들어감
 ----------
 # 함수
 ## 익명 함수
+```javascript
     var 함수 = function() {};
     
     <!-- <script>
@@ -120,7 +123,7 @@ aside:
         };
       alert(func);
     </script>; -->
-
+```
 
 ## 선언적 함수
 - 함수는 선언적 함수부터 읽음
@@ -142,6 +145,7 @@ aside:
 ## 콜백 함수
 - 자바스크립트에서는 함수도 하나의 자료형이므로 매개변수로 전달 가능
 - 이렇게 매개변수로 전달하는 함수를 콜백 함수라고 함
+```javascript
     function callTenTimes(callback) {
       for(var i = 0; i < 10; i++) {
         callback();
@@ -165,10 +169,11 @@ aside:
     callTenTimes(function () {
       alert('ㅎㅅ ㅎㅊ');
     });
-
+```
 
 
 ## 함수를 리턴 하는 함수
+```javascript
     function returnFunction() {
       return function () {
         alert('hello function .. !');
@@ -176,9 +181,10 @@ aside:
     }
     
     returnFunction()();
-
+```
 
 ## 클로저
+```javascript
     function test(name) {
       var output = 'hello ' + name + ' ..!';
       return function () {
@@ -187,6 +193,7 @@ aside:
     }
     
     test('JavaScript')();
+```
 - 클로저의 정의는 워낙 다양합니다
 - 이렇게 지역 변수를 남겨두는 현상을 클로저라고 부르기도 하고, 함수 test() 내부의 변수들이 살아있는 것이므로 test() 함수로 생성된 공간을 클로저라고 부르기도 합니다.
 - 또한 리턴된 함수 자체를 클로저라고 부르기도 하며, 살아남은 지역 변수 output을 클로저라고 부르기도 합니다.
@@ -214,7 +221,7 @@ aside:
 
 → 클로저를 이용한 콜백 함수 실행 시간 조절
 
-
+```javascript
     for(var i = 0; i < 3; i++) {
       (function (closed_i) {
         setTimeout(function () {
@@ -222,9 +229,10 @@ aside:
         } ,0);
       })(i);
     }
-
+```
 
 ## 짧은 조건문을 활용한 기본 매개 변수
+```javascript
     <script>
       function test(a, b, c) {
         b = b || 52;
@@ -235,19 +243,21 @@ aside:
     
     test(1, 2);
     }
-
+```
 
 ## 화살표 함수
+```javascript
     function() {}  ==  () => {}
     
     const multiply = (a, b) => a * b;
     
     alert(multiply(1, 2));
     alert(multiply(3, 4));
-
+```
 
 ----------
 # 객체
+```javascript
     <script>
       var product = {
         제품명 : 'asf',
@@ -255,7 +265,7 @@ aside:
         원산지 : 'fda'
       };
     </script>
-
+```
 
 - product.제품명
 - product[‘제품명’]
@@ -287,6 +297,7 @@ aside:
 - 배열은 단순 for 반목문과 for in 반복문으로 요소에 쉽게 접근할 수 있습니다.
 - 하지만 객체는 단순 for 반복문으로 객체의 속성을 살펴보는 것이 불가능합니다
 - 객체의 속성을 모두 살펴보려면 for in 반복문을 사용해야 합니다
+```javascript
     var product = {
       name : 'microsofr visual studio',
       price : '15000',
@@ -301,7 +312,7 @@ aside:
       output += 'key' + ': ' + product[key] + '\n';
     }
     alert(output);
-
+```
 
 ## in 키워드
     ('이름' in student)
@@ -323,6 +334,7 @@ aside:
 
 
 - 추가
+```javascript
     var student = {};
     
     student.name = 'tom';
@@ -340,7 +352,7 @@ aside:
     };
     
     alert(student.toString());
-
+```
 
 - 제거
     delete(student.dream);
@@ -350,6 +362,7 @@ aside:
 
 
 ## 객체와 배열을 사용한 데이터 관리
+```javascript
     for(var i in students) {
       students[i].getSum = function () {
         return this.국어 + this.수학 + this.영어 + this.과학;
@@ -366,14 +379,14 @@ aside:
         output += .....;
       }
     }
-
+```
 
 ## 함수를 사용한 객체 생성
 - 앞에서는 배열 안에 객체를 하나씩 직접 만들어서 넣었습니다
 - 이 경우, 서로 다른 형태의 객체를 배열 안에 넣을 수 있다는 장점이 있음
 - 근데 귀찮아, 객체를 만드는 틀을 만들자
 
-
+```javascript
     function makeStudent(name, korean, math, english, science) {
       var willReturn = {
         ...
@@ -394,7 +407,7 @@ aside:
       output += students[i].toString() + '\n';
     }
     alert(output);
-
+```
 
 - 하지만 이런거 안써
 - 생성자 함수를 사용한다…. 그럼 왜 나온거야 짜증나게
@@ -413,6 +426,7 @@ aside:
 
 
 ## 깊은 복사
+```javascript
     function clone(obj) {
       var output = {};
       for(var i in obj) {
@@ -420,11 +434,12 @@ aside:
       }
       return output;
     }
-
+```
 
 ----------
 # 생성자 함수
 - 객체를 생성할 때 사용 되는 함수
+```javascript
     function Student(name, korean, math, english, science) {
       this.name = name;
       this.korean = korean;
@@ -436,14 +451,14 @@ aside:
       this.getAverage = function () {};
       this.toString = function () {};
     }
-
+```
 
 ## 프로토 타입
 - 객체의 속성들은 모두 다른 값을 가지지만, 메서드는 모두 같은 값을 가진다
 - 프로토타입은 생성자 함수로 생성된 객체가 공통으로 가지는 공간
 
 
-    
+```javascript
     function Student(name, korean, math, english, science) {
       this.name = name;
       this.korean = korean;
@@ -455,7 +470,7 @@ aside:
     Student.prototype.getsum = function () {};
     Student.prototype.getAverage = function () {};
     Student.prototype.toString = function () {};
-
+```
 
 ----------
 
@@ -571,7 +586,7 @@ aside:
 
 - 요소 노드와 텍스트 노드를 만들어서 텍스트 노드를 요소 노드에 붙여준다
 
-
+```javascript
     window.onload = function () {
       var header = document.createElement('h1');
       var textNode = document.createTextNode('Hello DOM');
@@ -579,9 +594,10 @@ aside:
       header.appendChild(textNode);
       document.body.appendChild(header);
     };
-
+```
 
 - 텍스트 노드를 갖지 않는 노드를 생성하는 방법
+```javascript
     window.onload = function () {
       var img = document.createElement('img');
       img.src = 'Penguins.jpg';
@@ -590,9 +606,10 @@ aside:
      
       document.body.appendChild(img);
     };
-
+```
 
 - 다른 방법
+```javascript
     window.onload = function () {
       var img = document.createElement('img');
       img.setAttribute('src', 'Penguins.jpg');
@@ -603,7 +620,7 @@ aside:
       
       document.body.appendChild(img);
     };
-
+```
 
 
 - 지금까지 문서 객체를 생성하는 방법은 노드를 만들고 연결하는 방법
@@ -614,7 +631,7 @@ aside:
 - 문서객체의 innerHTML 속성은 태그의 내부를 의미하는 속성
 - 문자열을 선언하고 body 문서 객체의 innerHTML 속성에 넣기만 하면 문서 객체를 생성해 줍니다
 
-
+```javascript
     window.onload = function () {
       var output = '';
       output +='<ul>';
@@ -627,26 +644,30 @@ aside:
     
       doucument.body.innerHTML += '<h1>Document Object Model</h1>';
     };
-
+```
 
 ## 문서 객체 가져오기
 - 웹 페이지에 이미 존재하는 HTML 태그를 자바스크립트로 가져오는 방법을 알아보자
 - document 객체가 갖는 표 10-4의 메서드를 사용하면 이미 웹페이지에 존재하는 문서 객체를 가져올 수 있음
+```javascript
 - getElementById(id)
     <body>
       <h1 id="header-1">Header</h1>
       <h1 id="header-2">Header</h1>
     </body>
-
+```
 
 - document 객체의 getElementById() 메서드는 id 속성을 갖는 태그만 가져올 수 있음
+```javascript
     window.onload = function () {
       var header1 = document.getElementById('header-1');
       var header2 = document.getElementById('header-2');
     };
+```
 
 
 - header1과 header2는 문서 객체이므로 점을 찍으면 문서 객체의 속성과 메서드를 살펴볼 수 있음.
+```javascript
     window.onload = function () {
       var header1 = document.getElementById('header-1');
       var header2 = document.getElementById('header-2');
@@ -655,7 +676,7 @@ aside:
       header1.innerHTML = 'with getElementById()';
       header2.innerHTML = 'with getElementById()';
     };
-
+```
 
 - document 객체의 getElementById() 메서드는 한 번에 한 가지 문서 객체만 가져올 수 있습니다.
 - 반면 getElementsByName(name), getElementsByTagName(tagName)을 사용하면 한번에 여러 개의 문서 객체를 가져 올 수 있습니다.
@@ -685,13 +706,14 @@ aside:
 
 ## 문서 객체의 스타일 조작
 - 문서 객체의 style 속성을 사용하면 해당 문서 객체의 스타일을 변경할 수 있습니다.
+```javascript
     window.onload = function () {
       var header = document.getElementById('header');
       
       header.style.border = '2px solid black';
       header.style.color = 'orange';
       header.style.fontFamiy = 'helvetica';
-
+```
 
 - 자바스크립트는  특수기호 - 를 식별자로 사용할 수 없으므로 header.style.background-color = ‘red’ 라고 하면 에러
 
@@ -699,6 +721,7 @@ aside:
 ## 문서 객체 제거
 - 문서 객체를 제거할 때는 문서 객체가 가지는 제거 메서드를 사용합니다
 - removeChild(child) : 문서 객체의 자식 노드를 제거합니다
+```javascript
     window.onload = function () {
       var willRemove = document.getElementById('will-remove');
     
@@ -706,7 +729,7 @@ aside:
     };
     
     willRemove.parnetNode.remoeChild(willRemove);
-
+```
 
 ----------
 # 이벤트
@@ -718,12 +741,14 @@ aside:
 
 - 이 때 load를 이벤트 이름 또는 이벤트 타입이라고 하며 onload를 이벤트 속성이라고 합니다
 - 또한 이벤트 속성에 할당한 함수를 이벤트 리스너 또는 이벤트 핸들러라고 합니다.
+```javascript
     window.onload = function() {
       var header = document.getElementById('header');
     
       function whenClick() { alert('CLICK'); }
       header.onclick = whenClick;
     };
+```
 - header 객체의 이벤트 이름은 click
 - 이벤트 속성은 onclick
 - 이벤트 리스너는 whenClick() 함수
@@ -736,6 +761,7 @@ aside:
 ## 고전 이벤트 모델
 - 고전 이벤트 모델은 자바스크립트에서 문서 객체의 이벤트 속성으로 이벤트를 연결하는 방법입니다.
 - 이름은 고전이지만 현대에도 많이 사용합니다.
+```javascript
     window.onload = function () {
       var header = document.getElementById('header');
       
@@ -743,12 +769,13 @@ aside:
         alert('click');
       };
     };
+```
 - getElementById로 문서 객체를 가져 와서 거기에 이벤트를 연결
 - 코드를 실행하고 h1 태그를 클릭하면 이벤트가 발생하고 경고창이 출력
 - 이벤트 리스너를 제거할 때는 문서 객체의 이벤트 속성에 null을 넣어줍니다.
 - 이벤트 리스너가 한 번 실행된 이후에 이벤트를 제거하므로, 두 번째 클릭부터는 이벤트가 발생하지 않습니다.
 
-
+```javascript
     window.onload = function () {
       var header = document.getElementById('header');
       
@@ -758,6 +785,7 @@ aside:
       header.onclick = null;
       };
     };
+```
 - 고전 이벤트 모델은 이벤트 하나에 이벤트 리스너 하나만 연결할 수 있습니다.
 
 
@@ -767,30 +795,36 @@ aside:
 
 - 누가?
 - 이벤트 리스너 안에서 this 키워드를 사용하면 이벤트가 발생한 객체를 찾을 수 있습니다
+```javascript
     window.onload = function() {
       document.getElementById('header').onclick = function () {
         alert(this);
       };
     };
+```
 
 → object HTMLHeadingElement가 출력이 된다
-
+```javascript
     window.onload = function () {
       document.getElementById('header').onclick = function () {
         this.style.color = 'orange';
         this.style.backgroundColor = 'red';
       };
     };
+```
 - header라는 아이디를 가진 태그의 값이 변경됨
 
 
 ## 인라인 이벤트 모델
 - 인라인 이벤트 모델은 html 페이지의 가장 기본적인 이벤트 연결 방법입니다.
+```javascript
     <body>
       <h1 onclick="">Click</h1>
     </body>
+```
 - 모든 태그의 이벤트 속성에는 자바스크립트 코드를 적어줍니다
 - 다음 코드처럼 적으면 h1 태그를 클릭할 때 onclick 속성의 자바스크립트 코드를 실행합니다
+```javascript
     <body>
       <h1 onclick="alert('click')">Click</h1>
     </body>
@@ -799,8 +833,10 @@ aside:
     <body>
       <h1 onclick="var alpha=10; alert(alpha);">Click</h1>
     </body>
+```
 - 하지만 이렇게 이벤트 속성에 여러 줄의 코드를 작성하면 굉장히 지저분해집니다.
 - 따라서 HTML 태그의 이벤트 속성 안에 코드를 모두 쓰기보다는 함수를 script 태그 안에 만들고 이를 호출하는 방식을 더 많이 사용합니다.
+```javascript
     <script>
       function whenClick(e) {
         alert('click');
@@ -810,6 +846,7 @@ aside:
     <body>
       <h1 onclick="whenClick(event)">Click</h1>
     </body>
+```
 - h1 태그가 가지는 이벤트 속성에서 이벤트를 호출할 때 매개변수를 넣었습니다. 이것이 이벤트 객체를 전달하는 방법입니다. 이벤트 객체는 고전 이벤트 모델과 마찬가지의 방법으로 사용할 수 있습니다.
 ## 디폴트 이벤트 제거
     document.getElementById('my-form').onsubmit = function () {
@@ -819,6 +856,7 @@ aside:
 
 
 ## 이벤트 전달
+```javascript
     <div onclick="alert('outer-div')">
       <div onclick="alert('inner-div')">
         <h1 onclick="alert('header')">
@@ -826,6 +864,7 @@ aside:
         </h1>
       </div>
     </div>
+```
 - 마우스로 p 태그를 클릭할 때 마우스 커서의 좌표에 네 개의 태그가 있으므로 네 개의 태그에서 동시에 이벤트가 발생합니다.
 - 이와 같이 어떠한 이벤트가 먼저 발생해 어떤 순서로 발생하는지를 이벤트 전달이라고 합니다.
 - 일반적으로 자바스크립트의 이벤트 전달 순서는 이벤트 버블링 방식을 따릅니다
@@ -837,9 +876,9 @@ aside:
 - 표준 이벤트 모델은 웹 표준을 만드는 단체인 w3c에서 공식적으로 지정한 dom level 2 이벤트 모델입니다.
 - 인터넷 익스플로러 이벤트 모델과 마찬가지로 한 번에 여러 가지의 이벤트 리스너를 추가할 수 있습니다.
 
-
 - addEventListener(eventName, handler, useCapture)
 - removeEventListener(eventName, handler)
+```javascript
     window.onload = function () {
       var header = document.getElementById('my-header');
     
@@ -847,5 +886,5 @@ aside:
         this.innerHTML += '+';
       });
     };
-
+```
 
