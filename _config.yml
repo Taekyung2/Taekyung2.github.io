@@ -108,7 +108,7 @@ comments:
 
   ## Disqus
   disqus:
-    shortname: ltk3934 # the Disqus shortname for the site
+    shortname: taekyung2-github-io # the Disqus shortname for the site
 
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
@@ -203,6 +203,7 @@ defaults:
       layout: article
       sharing: false
       license: false
+      comments: true
       aside:
         toc: true
       show_edit_on_github: true
